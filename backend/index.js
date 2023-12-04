@@ -9,15 +9,16 @@ const app = express();
 //Middleware for parsing request body
 app.use(express.json());
 //Cors for everything:
-//app.use(cors());
+app.use(cors());
+
 //Custom Cors :
-app.use(
-  cors({
-    origin: "http://localhost:3000",
-    methods: ["GET", "POST", "PUT", "DELETE"],
-    allowedHeaders: ["Content-Type"],
-  })
-);
+// app.use(
+//   cors({
+//     origin: "http://localhost:3000",
+//     methods: ["GET", "POST", "PUT", "DELETE"],
+//     allowedHeaders: ["Content-Type"],
+//   })
+// );
 mongoose
   .connect(DB_URL)
   .then(() => {
