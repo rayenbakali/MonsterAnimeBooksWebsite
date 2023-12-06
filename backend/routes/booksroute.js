@@ -46,11 +46,14 @@ router.get("/:id", async (req, res) => {
   // {id} = req.params;
   try {
     const book = await Book.findById(userId);
-    return res.status(200).json({
-      title: book.title,
-      author: book.author,
-      description: "ill add it later",
-    });
+    return res.status(200).json(
+      book
+      // title: book.title,
+      // author: book.author,
+      // publishYear: book.publishYear,
+      // createdAt: book.createdAt,
+      // updatedAt: book.updatedAt,
+    );
   } catch (error) {
     console.log(error.message);
     res.status(500).send({ message: error.message });
